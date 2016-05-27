@@ -3,6 +3,10 @@
   "description": "Basic rendering scripts for Texen (Texture Engine)",
   "version": "1.0.0",
   "author": "Jan Forst <ensonador@gmail.com>",
+  "dependencies": {
+    "texen-core": "file:..\\texen-core",
+    "texen-samples": "file:..\\texen-samples"
+  },
   "devDependencies": {
     "browserify": "^12.0.1",
     "gulp": "^3.9.0",
@@ -30,9 +34,5 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "texen-core": "file:..\\texen-core",
-    "texen-samples": "file:..\\texen-samples"
   }
 }
