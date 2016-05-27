@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<canvas id="canvas" width="512" height="512"></canvas>
+<script src="../../dist/texen-scripts.js"></script>
+<script src="../../node_modules/texen-samples/dist/texen-samples.js"></script>
+<script>
+    var formula = txSamples.data[133];
+    var job = new txScripts.Job(formula, 0, 512, 64);
+    var worker = new Worker('../../dist/texen-scripts.js');
+    worker.postMessage({preLoad: true, path: '../node_modules/texen-core/dist'});
+
+    worker.onmessage = function (event) {
+        txScripts.Canvas.draw(document.getElementById('canvas'), event.data.result, event.data.channels);
+        console.log(event.data.log);
+    };
+
+    setTimeout(function () {
+        worker.postMessage({formula: JSON.stringify(formula), parts: job.parts});
+    });
+</script>

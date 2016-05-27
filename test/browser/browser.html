@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<canvas id="canvas" width="512" height="512"></canvas>
+<script>
+    var Module = {};
+</script>
+<script src="../../node_modules/texen-core/dist/texen-core-light.js"></script>
+<script src="../../dist/texen-scripts.js"></script>
+<script src="../../node_modules/texen-samples/dist/texen-samples.js"></script>
+<script>
+    var wrap = new txScripts.Wrap(Module);
+    var options = new txScripts.Options();
+    options.width = 512;
+    options.height = 512;
+    wrap.run(JSON.stringify(txSamples.data[0]), options);
+    var log = wrap.log();
+    console.log(log);
+    console.log(wrap.channels());
+    txScripts.Canvas.draw(document.getElementById('canvas'), wrap);
+</script>

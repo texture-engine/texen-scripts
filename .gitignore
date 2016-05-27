@@ -1,0 +1,9 @@
+build
+doc
+dist
+node_modules
+test/output
+
+texen-scripts.d.ts
+
+.idea/

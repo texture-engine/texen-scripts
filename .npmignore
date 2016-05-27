@@ -1,0 +1,14 @@
+build
+doc
+gulp_tasks
+node_modules
+src
+test
+typings
+
+.npmignore
+gulpfile.js
+texen-scripts.d.ts
+tsd.json
+
+.idea/
